@@ -1,1 +1,24 @@
-<button eds-button>Hello world</button>
+<eds-system-bar (settingsHandler)="settingsHandler($event)"></eds-system-bar>
+<main>
+  <aside eds-settings [ngClass]="{hidden: !settingsOpened}"></aside>
+  <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
+    <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)"></eds-app-bar>
+    <div class="appbody">
+      <div class="appnav" [ngClass]="{hidden: !menuOpened}">
+        <eds-tree mode="navigation">
+          <eds-tree-item>Example page</eds-tree-item>
+          <eds-tree-item route="standalone">Standalone example page</eds-tree-item>
+          <eds-sub-tree>
+            <eds-sub-tree-title>Group of pages</eds-sub-tree-title>
+            <eds-tree-item route="example1">Example 1</eds-tree-item>
+            <eds-tree-item route="example2">Example 2</eds-tree-item>
+            <eds-tree-item route="example3">Example 3</eds-tree-item>
+          </eds-sub-tree>
+        </eds-tree>
+      </div>
+      <div class="appcontent">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
