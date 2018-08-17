@@ -1,9 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
-import { ButtonModule, SettingsModule, SystemBarModule, AppBarModule, TreeModule } from '@eds/angular';
+import {
+  AppBarModule,
+  ButtonModule,
+  SettingsModule,
+  SwitchModule,
+  SystemBarModule,
+  TreeModule,
+  ThemeService
+} from '@eds/angular';
+
 import { ExamplePageComponent } from './pages/example-page/example-page.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,13 +25,15 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    FormsModule,
     AppBarModule,
     ButtonModule,
     SettingsModule,
+    SwitchModule,
     SystemBarModule,
     TreeModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

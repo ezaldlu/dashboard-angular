@@ -1,6 +1,30 @@
 <eds-system-bar (settingsHandler)="settingsHandler($event)"></eds-system-bar>
 <main>
-  <aside eds-settings [ngClass]="{hidden: !settingsOpened}"></aside>
+  <eds-settings [opened]="settingsOpened">
+    <div class="profile">
+      <i class="icon icon-profile"></i>
+      <div class="username">Username</div>
+    </div>
+    <div class="content">
+      <div class="title">My settings</div>
+      <div class="item">
+        <div class="left">
+          Switch theme
+        </div>
+        <div class="right">
+          <eds-switch [(ngModel)]="isLightTheme" (ngModelChange)="toggleTheme($event)">
+            <eds-switch-on>Light</eds-switch-on>
+            <eds-switch-off>Dark</eds-switch-off>
+          </eds-switch>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <button eds-button class="big">
+        <i class="icon icon-log-out"></i> Sign out
+      </button>
+    </div>
+  </eds-settings>
   <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
     <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)"></eds-app-bar>
     <div class="appbody">

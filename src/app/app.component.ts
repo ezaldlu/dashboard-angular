@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ThemeService } from '@eds/angular';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   menuOpened = (window.innerWidth > 768);
   settingsOpened = false;
+  isLightTheme = true;
+
+  constructor(private themeService: ThemeService) {}
+
+  toggleTheme(isLight: boolean) {
+    this.themeService.toggle(isLight);
+  }
 
   menuHandler() {
     this.menuOpened = !this.menuOpened;
