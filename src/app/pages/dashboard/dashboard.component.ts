@@ -51,10 +51,6 @@ export class DashboardComponent implements OnInit {
         {
           data: 'Data preset D',
           status: 'Passed',
-        },
-        {
-          data: 'Data preset F',
-          status: 'Failed',
         }
       ]
     };

@@ -1,6 +1,6 @@
 <div class="row">
   <div eds-tile class="xl-3">
-    <eds-tile-title>Total compliance score</eds-tile-title>
+    <eds-tile-title>Total score</eds-tile-title>
     <eds-tile-actions>
       <div class="action">
         <eds-dropdown icon="more">
@@ -14,22 +14,48 @@
   </div>
   <div eds-tile class="xl-4">
     <eds-tile-title>Complicance by preset</eds-tile-title>
+    <eds-tile-actions>
+      <div class="action">
+        <eds-dropdown icon="more">
+          <div eds-dropdown-item>Some action 1</div>
+          <div eds-dropdown-item>Some action 2</div>
+          <div eds-dropdown-item>Some action 3</div>
+        </eds-dropdown>
+      </div>
+    </eds-tile-actions>
     <eds-table [settings]="tablePreset" mode="compact dashed"></eds-table>
   </div>
   <div eds-tile class="xl-5">
     <eds-tile-title>Complicance status</eds-tile-title>
+    <eds-tile-actions>
+      <div class="action">
+        <eds-dropdown icon="more">
+          <div eds-dropdown-item>Some action 1</div>
+          <div eds-dropdown-item>Some action 2</div>
+          <div eds-dropdown-item>Some action 3</div>
+        </eds-dropdown>
+      </div>
+    </eds-tile-actions>
     <eds-progress-bar label="VDC 11" value="56" color="blue"></eds-progress-bar>
     <eds-progress-bar label="VDC 03" value="11" mode="thin"></eds-progress-bar>
     <eds-progress-bar label="VDC 05" value="86" color="red"></eds-progress-bar>
     <eds-progress-bar label="VDC 11" value="40" color="blue"></eds-progress-bar>
     <eds-progress-bar label="VDC 09" value="34" mode="thin"></eds-progress-bar>
-    <eds-progress-bar label="VDC 13" value="66" color="blue"></eds-progress-bar>
     <eds-progress-bar label="VDC 01" value="03" mode="thin"></eds-progress-bar>
   </div>
 </div>
 <div class="row">
   <div eds-tile class="xl-3">
     <eds-tile-title>Latest alerts</eds-tile-title>
+    <eds-tile-actions>
+      <div class="action">
+        <eds-dropdown icon="more">
+          <div eds-dropdown-item>Some action 1</div>
+          <div eds-dropdown-item>Some action 2</div>
+          <div eds-dropdown-item>Some action 3</div>
+        </eds-dropdown>
+      </div>
+    </eds-tile-actions>
     <eds-accordion>
       <eds-accordion-item opened>
         <eds-accordion-item-title>
@@ -49,7 +75,7 @@
       </eds-accordion-item>
       <eds-accordion-item opened>
         <eds-accordion-item-title>
-            2018-06-02 14:01
+          2018-06-02 14:01
         </eds-accordion-item-title>
         <eds-accordion-item-content>
           <p>Code (SQL, HTML) seen as part of the system</p>
@@ -57,7 +83,7 @@
       </eds-accordion-item>
       <eds-accordion-item opened>
         <eds-accordion-item-title>
-            2018-06-02 13:56
+          2018-06-02 13:56
         </eds-accordion-item-title>
         <eds-accordion-item-content>
           <p>System scan</p>
@@ -67,6 +93,15 @@
   </div>
   <div eds-tile class="xl-9">
     <eds-tile-title>Fraud probability map</eds-tile-title>
+    <eds-tile-actions>
+      <div class="action">
+        <eds-dropdown icon="more">
+          <div eds-dropdown-item>Some action 1</div>
+          <div eds-dropdown-item>Some action 2</div>
+          <div eds-dropdown-item>Some action 3</div>
+        </eds-dropdown>
+      </div>
+    </eds-tile-actions>
     <div class="map" id='map'></div>
   </div>
 </div>
