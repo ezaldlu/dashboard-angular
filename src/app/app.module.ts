@@ -11,7 +11,8 @@ import {
   SwitchModule,
   SystemBarModule,
   TreeModule,
-  ThemeService
+  ThemeService,
+  TileModule
 } from '@eds/angular';
 
 import { ExamplePageComponent } from './pages/example-page/example-page.component';
@@ -31,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     SettingsModule,
     SwitchModule,
     SystemBarModule,
+    TileModule,
     TreeModule
   ],
   providers: [ThemeService],
