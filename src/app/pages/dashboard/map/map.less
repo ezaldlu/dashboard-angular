@@ -1,0 +1,165 @@
+// map from mapbox
+.map {
+  min-height: 400px;
+  width: 100%;
+  height: 100%;
+
+  a {
+    color: @text;
+  }
+}
+
+.mapboxgl-canvas {
+  left: 0;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in {
+  background: @layer2;
+  color: @text;
+
+  &::before {
+    content: "\E91E";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 0 px;
+    top: 0 px;
+    position: relative;
+  }
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out {
+  background: @layer2;
+  color: @text;
+
+  &::before {
+    content: "\E91C";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 0 px;
+    top: 0 px;
+    position: relative;
+  }
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+  background: @layer2;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass > .mapboxgl-ctrl-compass-arrow {
+  background: transparent;
+  color: @text;
+  width: unset;
+  height: unset;
+  margin: 0;
+  padding: 7px;
+
+  &::before {
+    content: "\E90C";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 0 px;
+    top: 0 px;
+    position: relative;
+  }
+}
+
+.mapboxgl-ctrl > button:hover,
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass > .mapboxgl-ctrl-compass-arrow:hover {
+  background-color: @gray !important;
+  color: @white;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  border: solid 1px @gray;
+}
+
+.mapboxgl-ctrl-group > button + button {
+  border-top: 1px solid @gray;
+}
+
+// map marker
+.nodeBig {
+  &::before {
+    content: "\E941";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 7px;
+    top: 6px;
+    position: relative;
+  }
+  color: @layer2;
+  cursor: pointer;
+  background: @text;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.server {
+  &::before {
+    content: "\E972";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 7.5px;
+    top: 5px;
+    position: relative;
+  }
+  color: @layer2;
+  cursor: pointer;
+  background: @text;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.node-warning {
+  &::before {
+    content: "\E937";
+    font-family: edsfont;
+    font-size: 16px;
+    left: 7px;
+    top: 4px;
+    position: relative;
+  }
+  color: @white;
+  cursor: pointer;
+  background: @red;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.node {
+  background-color: @text;
+  border-radius: 30px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.nodeRed {
+  background-color: @red;
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  color: #242424;
+  padding: 12px 8px 8px !important;
+}
+
+.mapboxgl-ctrl-bottom-left, .mapbox-improve-map {
+  display: none !important;
+}

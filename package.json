@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@eds/angular": "^0.6.1",
-    "@eds/vanilla-components": "1.4.0",
+    "@eds/vanilla-components": "^1.4.0",
     "core-js": "^2.5.4",
     "prismjs": "1.15.0",
     "rxjs": "^6.0.0",
