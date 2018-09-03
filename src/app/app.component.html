@@ -30,13 +30,13 @@
     <div class="appbody">
       <div class="appnav" [ngClass]="{hidden: !menuOpened}">
         <eds-tree mode="navigation">
-          <eds-tree-item>Example page</eds-tree-item>
+          <eds-tree-item route="/">Example page</eds-tree-item>
           <eds-tree-item route="dashboard">Standalone example page</eds-tree-item>
           <eds-sub-tree>
             <eds-sub-tree-title>Group of pages</eds-sub-tree-title>
-            <eds-tree-item route="example1">Example 1</eds-tree-item>
-            <eds-tree-item route="example2">Example 2</eds-tree-item>
-            <eds-tree-item route="example3">Example 3</eds-tree-item>
+            <eds-tree-item>Example 1</eds-tree-item>
+            <eds-tree-item>Example 2</eds-tree-item>
+            <eds-tree-item>Example 3</eds-tree-item>
           </eds-sub-tree>
         </eds-tree>
       </div>
