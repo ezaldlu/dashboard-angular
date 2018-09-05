@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Map } from './map/map';
+import { Map } from './map/Map';
 
 @Component({
   selector: 'app-dashboard',
