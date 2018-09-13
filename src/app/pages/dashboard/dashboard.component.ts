@@ -52,7 +52,27 @@ export class DashboardComponent implements OnInit {
       [
         {
           id: 1,
-          content: 'Data preset A'
+          content: 'Data preset E'
+        },
+        {
+          id: 2,
+          content: 'Passed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset B'
+        },
+        {
+          id: 2,
+          content: 'Passed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset C'
         },
         {
           id: 2,
@@ -62,31 +82,11 @@ export class DashboardComponent implements OnInit {
       [
         {
           id: 1,
-          content: 'Data preset A'
+          content: 'Data preset D'
         },
         {
           id: 2,
-          content: 'Failed'
-        }
-      ],
-      [
-        {
-          id: 1,
-          content: 'Data preset A'
-        },
-        {
-          id: 2,
-          content: 'Failed'
-        }
-      ],
-      [
-        {
-          id: 1,
-          content: 'Data preset A'
-        },
-        {
-          id: 2,
-          content: 'Failed'
+          content: 'Passed'
         }
       ]
     ];
