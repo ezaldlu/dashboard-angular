@@ -1,6 +1,6 @@
 <div class="row">
   <div eds-tile class="xl-3">
-    <eds-tile-title>Total compliance score</eds-tile-title>
+    <eds-tile-title>Total score</eds-tile-title>
     <eds-tile-actions>
       <div class="action">
         <eds-dropdown icon="more">
@@ -23,7 +23,7 @@
         </eds-dropdown>
       </div>
     </eds-tile-actions>
-    <eds-table [settings]="tablePreset" mode="compact dashed"></eds-table>
+    <eds-table [columns]="tablePresetColumns" [data]="tablePresetData" [modes]="['compact', 'dashed']"></eds-table>
   </div>
   <div eds-tile class="xl-5">
     <eds-tile-title>Complicance status</eds-tile-title>

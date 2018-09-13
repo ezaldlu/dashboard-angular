@@ -10,7 +10,8 @@ import { Map } from './map/Map';
 export class DashboardComponent implements OnInit {
 
   gaugeScore;
-  tablePreset;
+  tablePresetColumns;
+  tablePresetData;
 
   constructor() { }
 
@@ -26,34 +27,69 @@ export class DashboardComponent implements OnInit {
       ]
     };
 
-    this.tablePreset = {
-      columns: {
-        data: 'Preset',
-        status: 'Status'
+    this.tablePresetColumns = [
+      {
+        id: 1,
+        content: 'Preset'
       },
-      data: [
+      {
+        id: 2,
+        content: 'Status'
+      }
+    ];
+
+    this.tablePresetData = [
+      [
         {
-          data: 'Data preset A',
-          status: 'Failed',
+          id: 1,
+          content: 'Data preset A'
         },
         {
-          data: 'Data preset E',
-          status: 'Passed',
+          id: 2,
+          content: 'Failed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset A'
         },
         {
-          data: 'Data preset B',
-          status: 'Passed',
+          id: 2,
+          content: 'Failed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset A'
         },
         {
-          data: 'Data preset C',
-          status: 'Failed',
+          id: 2,
+          content: 'Failed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset A'
         },
         {
-          data: 'Data preset D',
-          status: 'Passed',
+          id: 2,
+          content: 'Failed'
+        }
+      ],
+      [
+        {
+          id: 1,
+          content: 'Data preset A'
+        },
+        {
+          id: 2,
+          content: 'Failed'
         }
       ]
-    };
+    ];
 
     const m = new Map();
     m.init();
