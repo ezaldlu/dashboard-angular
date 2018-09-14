@@ -1,3 +1,8 @@
-@import "@eds/variables/light";
-@import "@eds/variables/dark";
-@import "./map/map";
+.dark {
+  @import (reference) "@eds/variables/dark";
+  @import (multiple) "./map/map";
+}
+.light {
+  @import (reference) "@eds/variables/light";
+  @import (multiple) "./map/map";
+}

@@ -16,6 +16,10 @@ export class AppComponent {
 
   toggleTheme(isLight: boolean) {
     this.themeService.toggle(isLight);
+
+    // Temporary event to switch the map theme
+    const switchTheme = new CustomEvent('switchTheme', { detail: { theme: document.body.classList } });
+    document.dispatchEvent(switchTheme);
   }
 
   menuHandler() {
