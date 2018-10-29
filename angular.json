@@ -25,7 +25,9 @@
             },
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {"glob": "**/*", "input": "./node_modules/@eds/vanilla/font/hilda", "output": "/hilda/"},
+              {"glob": "**/*", "input": "./node_modules/@eds/vanilla/font/icons", "output": "/icons/"}
             ],
             "styles": [
               "src/styles.css"

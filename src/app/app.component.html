@@ -1,4 +1,4 @@
-<eds-system-bar (settingsHandler)="settingsHandler($event)"></eds-system-bar>
+<eds-system-bar (settingsHandler)="settingsHandler()"></eds-system-bar>
 <main>
   <eds-settings [opened]="settingsOpened">
     <div class="profile">
@@ -26,7 +26,7 @@
     </div>
   </eds-settings>
   <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
-    <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler($event)"></eds-app-bar>
+    <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler()"></eds-app-bar>
     <div class="appbody">
       <div class="appnav" [ngClass]="{hidden: !menuOpened}">
         <eds-tree mode="navigation">
