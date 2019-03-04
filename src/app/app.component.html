@@ -21,14 +21,35 @@
     </div>
     <div class="bottom">
       <button eds-button class="big">
+        <!-- <i routerLink="/activity-dashboard" class="icon icon"> -->
+          <a text-color="white" routerLink="/">Dashboard</a>
+        <!-- </i> Activity Dashboard -->
+      </button>
+    </div>
+    <div class="bottom">
+      <button eds-button class="big">
+        <!-- <i routerLink="/activity-dashboard" class="icon icon"> -->
+          <a text-color="white" routerLink="/activity-dashboard">Activity Dashboard</a>
+        <!-- </i> Activity Dashboard -->
+      </button>
+    </div>
+    <div class="bottom">
+      <button eds-button class="big">
+        <!-- <i routerLink="/queue-dashboard" class="icon icon"> -->
+          <a text-color="white" routerLink="/queue-dashboard">Progress Dashboard</a>
+        <!-- </i> Progress Dashboard -->
+      </button>
+    </div>
+    <div class="bottom">
+      <button eds-button class="big">
         <i class="icon icon-log-out"></i> Sign out
       </button>
     </div>
   </eds-settings>
   <div class="app" [ngClass]="{'slide-right': !settingsOpened, 'slide-left': settingsOpened}">
-    <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler()"></eds-app-bar>
+    <!-- <eds-app-bar [menuOpened]="menuOpened" (menuHandler)="menuHandler()"></eds-app-bar> -->
     <div class="appbody">
-      <div class="appnav" [ngClass]="{hidden: !menuOpened}">
+      <!-- <div class="appnav" [ngClass]="{hidden: !menuOpened}">
         <eds-tree mode="navigation">
           <eds-tree-item route="/">Example page</eds-tree-item>
           <eds-tree-item route="dashboard">Standalone example page</eds-tree-item>
@@ -39,7 +60,7 @@
             <eds-tree-item>Example 3</eds-tree-item>
           </eds-sub-tree>
         </eds-tree>
-      </div>
+      </div> -->
       <div class="appcontent">
         <router-outlet></router-outlet>
       </div>

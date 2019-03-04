@@ -1,107 +1,141 @@
+<!-- <meta http-equiv="refresh" content="180; URL=https://dashboard.eid-tools.com/activity-dashboard"> -->
+<style type="text/css">
+  .text-xxl {
+    font-size: 90px;
+  }
+  .dot{ height: 20px; width: 20px; border-radius: 100%; display: inline-block; } .dot-red { background-color: #ff0000; } .dot-green { background-color: #008000; } .dot-yellow { background-color: #ffff00; }
+  .table{width:100%;border-left:none;border-right:none;border-collapse:collapse;text-align:left;margin-bottom:24px}
+  .table thead{font-weight:500}
+
+</style>
 <div class="row">
-  <div eds-tile class="xl-3">
-    <eds-tile-title>Total score</eds-tile-title>
-    <eds-tile-actions>
-      <div class="action">
-        <eds-dropdown icon="more">
-          <div eds-dropdown-item>Some action 1</div>
-          <div eds-dropdown-item>Some action 2</div>
-          <div eds-dropdown-item>Some action 3</div>
-        </eds-dropdown>
-      </div>
+    <div eds-tile class="xl-4">
+        <eds-tile-title>User on Shift</eds-tile-title>
+        <eds-tile-actions>
+        <div class="action">
+          <eds-dropdown icon="more">
+            <div eds-dropdown-item>Some action 1</div>
+            <div eds-dropdown-item>Some action 2</div>
+            <div eds-dropdown-item>Some action 3</div>
+          </eds-dropdown>
+        </div>
     </eds-tile-actions>
-    <eds-gauge [settings]="gaugeScore"></eds-gauge>
-  </div>
-  <div eds-tile class="xl-4">
-    <eds-tile-title>Complicance by preset</eds-tile-title>
-    <eds-tile-actions>
-      <div class="action">
-        <eds-dropdown icon="more">
-          <div eds-dropdown-item>Some action 1</div>
-          <div eds-dropdown-item>Some action 2</div>
-          <div eds-dropdown-item>Some action 3</div>
-        </eds-dropdown>
-      </div>
-    </eds-tile-actions>
-    <eds-table [columns]="tablePresetColumns" [data]="tablePresetData" [modes]="['compact', 'dashed']"></eds-table>
-  </div>
-  <div eds-tile class="xl-5">
-    <eds-tile-title>Complicance status</eds-tile-title>
-    <eds-tile-actions>
-      <div class="action">
-        <eds-dropdown icon="more">
-          <div eds-dropdown-item>Some action 1</div>
-          <div eds-dropdown-item>Some action 2</div>
-          <div eds-dropdown-item>Some action 3</div>
-        </eds-dropdown>
-      </div>
-    </eds-tile-actions>
-    <eds-progress-bar label="VDC 11" value="56" mode="thin" color="blue"></eds-progress-bar>
-    <eds-progress-bar label="VDC 03" value="11" mode="thin"></eds-progress-bar>
-    <eds-progress-bar label="VDC 05" value="86" mode="thin" color="red"></eds-progress-bar>
-    <eds-progress-bar label="VDC 11" value="40" mode="thin" color="blue"></eds-progress-bar>
-    <eds-progress-bar label="VDC 09" value="34" mode="thin"></eds-progress-bar>
-    <eds-progress-bar label="VDC 01" value="03" mode="thin"></eds-progress-bar>
-  </div>
+        <!-- <eds-table [columns]="tablePresetColumns" [data]="tablePresetData" [modes]="['compact', 'dashed']">
+         </eds-table> -->
+         <table class="table">
+          <thead>
+           <tr>
+           <th *ngFor="let col of tablePresetColumns">
+           {{col.content}}
+           </th>
+           <th></th>
+           <th></th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let row of tablePresetData ">
+            <td> {{row[0].content}}</td>
+         <td *ngFor="let cell of row"> 
+          <span class ="dot" [ngClass]="{
+           'dot-yellow' : cell.content == 'Busy',
+           'dot-green' : cell.content == 'Idle',
+           'dot-red' : cell.content == 'Overload'}">
+           </span>
+         </td>
+           </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="xl-8">
+        <div class="row">
+            <div eds-tile class="xl-6" style="height: 200px">
+                <eds-tile-title>Number of User on Shift</eds-tile-title>
+                <eds-tile-actions>
+                <div class="action">
+                  <eds-dropdown icon="more">
+                    <div eds-dropdown-item>Some action 1</div>
+                    <div eds-dropdown-item>Some action 2</div>
+                    <div eds-dropdown-item>Some action 3</div>
+                  </eds-dropdown>
+                </div>
+              </eds-tile-actions>
+              <div class="kpi">
+                 <!-- <div style="center" class="color-gray">Network activity</div> -->
+                 <div class="item" *ngFor="let item of apiData">
+                   <span class="text-xxl">{{item.total}}</span>
+                   <span class="text-lg color-gray"> Persons</span>
+                 </div>
+            </div>
+            </div>
+            <div eds-tile class="xl-6" style="height: 200px">
+                <eds-tile-title>Number of User Off</eds-tile-title>
+                <eds-tile-actions>
+                  <div class="action">
+                    <eds-dropdown icon="more">
+                      <div eds-dropdown-item>Some action 1</div>
+                      <div eds-dropdown-item>Some action 2</div>
+                      <div eds-dropdown-item>Some action 3</div>
+                    </eds-dropdown>
+                  </div>
+                </eds-tile-actions>
+                <!-- <eds-gauge [settings]="gaugeScore"></eds-gauge> -->
+                <div class="kpi">
+                   <!-- <div style="center" class="color-gray">Network activity</div> -->
+                   <div class="item" *ngFor="let item of unshift">
+                     <span class="text-xxl">{{item.total}}</span>
+                     <span class="text-lg color-gray"> Persons</span>
+                   </div>
+              </div>
+        </div>
+        <div class="row">
+            <div eds-tile class="xl-7" style="height: 500px">
+                <eds-tile-title>User on Shift Indicator</eds-tile-title>
+                <eds-tile-actions>
+                  <div class="action">
+                    <eds-dropdown icon="more">
+                      <div eds-dropdown-item>Some action 1</div>
+                      <div eds-dropdown-item>Some action 2</div>
+                      <div eds-dropdown-item>Some action 3</div>
+                    </eds-dropdown>
+                  </div>
+                </eds-tile-actions>
+                <div id="container" style="height: 100%"></div>
+            </div>
+            <div eds-tile class="xl-5" style="height: 500px">
+              <eds-tile-title>Today's Queue</eds-tile-title> 
+              <eds-tile-actions>
+                <div class="action">
+                  <eds-dropdown icon="more">
+                    <div eds-dropdown-item>Some action 1</div>
+                    <div eds-dropdown-item>Some action 2</div>
+                    <div eds-dropdown-item>Some action 3</div>
+                  </eds-dropdown>
+                </div>
+              </eds-tile-actions>
+              <!-- table ticket queue -->
+              <table class="table">
+                <thead>
+                 <tr>
+                 <th *ngFor="let col of tablePresetQueueColumns">
+                 {{col.content}}
+                 </th>
+                 <!-- <th></th>
+                 <th></th> -->
+                 </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let row of tablePresetQueueData ">
+                 <td *ngFor="let cell of row"> {{cell.content}}
+               </td>
+                 </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="row">
-  <div eds-tile class="xl-3">
-    <eds-tile-title>Latest alerts</eds-tile-title>
-    <eds-tile-actions>
-      <div class="action">
-        <eds-dropdown icon="more">
-          <div eds-dropdown-item>Some action 1</div>
-          <div eds-dropdown-item>Some action 2</div>
-          <div eds-dropdown-item>Some action 3</div>
-        </eds-dropdown>
-      </div>
-    </eds-tile-actions>
-    <eds-accordion>
-      <eds-accordion-item opened>
-        <eds-accordion-item-title>
-          2018-06-02 14:25
-        </eds-accordion-item-title>
-        <eds-accordion-item-content>
-          <p>Excessive access attempts to non-existing resources</p>
-        </eds-accordion-item-content>
-      </eds-accordion-item>
-      <eds-accordion-item opened>
-        <eds-accordion-item-title>
-          2018-06-02 14:20
-        </eds-accordion-item-title>
-        <eds-accordion-item-content>
-          <p>Initializing full-time diagnostic data into memory</p>
-        </eds-accordion-item-content>
-      </eds-accordion-item>
-      <eds-accordion-item opened>
-        <eds-accordion-item-title>
-          2018-06-02 14:01
-        </eds-accordion-item-title>
-        <eds-accordion-item-content>
-          <p>Code (SQL, HTML) seen as part of the system</p>
-        </eds-accordion-item-content>
-      </eds-accordion-item>
-      <eds-accordion-item opened>
-        <eds-accordion-item-title>
-          2018-06-02 13:56
-        </eds-accordion-item-title>
-        <eds-accordion-item-content>
-          <p>System scan</p>
-        </eds-accordion-item-content>
-      </eds-accordion-item>
-    </eds-accordion>
-  </div>
-  <div eds-tile class="xl-9">
-    <eds-tile-title>Fraud probability map</eds-tile-title>
-    <eds-tile-actions>
-      <div class="action">
-        <eds-dropdown icon="more">
-          <div eds-dropdown-item>Some action 1</div>
-          <div eds-dropdown-item>Some action 2</div>
-          <div eds-dropdown-item>Some action 3</div>
-        </eds-dropdown>
-      </div>
-    </eds-tile-actions>
-    <div class="map" id='map'></div>
-  </div>
-</div>
+<!-- <script type="text/javascript">
+  setTimeout(function(){
+    window.location.reload(1);
+  }, 3000);  
+</script> -->

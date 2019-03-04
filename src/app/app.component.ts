@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ThemeService } from '@eds/angular';
+import { ThemeService, TableModule } from '@eds/angular';
+import { TicketService } from './ticket.service';
+import { TableComponent } from '@eds/angular/lib/components/table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { ThemeService } from '@eds/angular';
 export class AppComponent {
   menuOpened = (window.innerWidth > 768);
   settingsOpened = false;
-  isLightTheme = true;
+  isLightTheme = false;
 
   constructor(private themeService: ThemeService) {}
 

@@ -1,22 +1,46 @@
-<!-- Row 1 -->
-<div class="row">
-  <div eds-tile class="sm-12">
-    <eds-tile-title>Top tile</eds-tile-title>
-    <eds-tile-subtitle>Subtitle example</eds-tile-subtitle>
-    <div class="box"></div>
+<div class="signin">
+  <div class="watermark">
+    <i class="icon icon-econ"></i>
+    <div class="product">Ericsson Design System</div>
   </div>
-</div>
 
-<!-- Row 2 -->
-<div class="row">
-  <div eds-tile class="sm-12 xl-6">
-    <eds-tile-title>Left tile</eds-tile-title>
-    <eds-tile-subtitle>Subtitle example</eds-tile-subtitle>
-    <div class="box"></div>
+  <div class="welcome hidden">
+    <div class="message">Welcome</div>
+    <div class="username">Lars Magnus</div>
+    <div class="loading"></div>
   </div>
-  <div eds-tile class="sm-12 xl-6">
-    <eds-tile-title>Right tile</eds-tile-title>
-    <eds-tile-subtitle>Subtitle example</eds-tile-subtitle>
-    <div class="box"></div>
+
+  <div class="error hidden">Invalid username and/or password.</div>
+  <form action="/templates/signin" method="get" class="">
+
+    <div class="field validate">
+      <input type="email" name="username" id="username" placeholder="Email" tabindex="0" autofocus required>
+      <label for="username">Username</label>
+      <div class="hint"></div>
+    </div>
+
+    <div class="field validate">
+      <input type="password" name="password" id="password" placeholder=" " tabindex="0" required>
+      <label for="password">Password</label>
+      <span class="reveal tooltip">
+        <i class="icon icon-eye"></i> <span class="message bottom-end">Show password</span>
+      </span>
+      <div class="hint"></div>
+    </div>
+
+    <input type="checkbox" name="remember" id="remember" tabindex="0">
+    <label for="remember">Remember me</label>
+
+    <button class="btn big primary">Sign in</button>
+
+    <div class="help">
+      <a href="#" class="subtle-link">Having trouble signing in?</a>
+    </div>
+  </form>
+
+  <div class="footer">
+    © Ericsson AB 2013-2018 - All Rights Reserved. <br />
+    No part of this software may be reproduced in any form without the written permission of the copyright holder.
   </div>
+
 </div>
