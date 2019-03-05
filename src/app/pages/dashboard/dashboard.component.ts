@@ -41,21 +41,17 @@ export class DashboardComponent implements OnInit {
       "#008000",   //green
       "#ff0000"   //red
     ],
-    // getColor : {
-    //   'Busy': '#ffff00',
-    //   'Idle': '#008000',
-    //   'Overload': '#ff0000'
-    // },
+    
     chart: {
       backgroundColor: "transparent"
     }
   };
 
   constructor(private upperqueueservice: UpperqueueService, private ticketService: TicketService, private scheduleService: ScheduleService, private unshiftService: UnshiftService, private indicatorservice: IndicatorService) {
-    const theme = this.chartTheme;
+    // const theme = this.chartTheme;
 
-    this.Highcharts.theme = theme;
-    this.Highcharts.setOptions(theme);
+    // this.Highcharts.theme = theme;
+    // this.Highcharts.setOptions(theme);
   }
 
   public apiData;
@@ -93,26 +89,26 @@ export class DashboardComponent implements OnInit {
         let key = Object.keys(e)[0]
         return { name: key, y: +e[key] }
       })
-      console.log(op);
-      // op.forEach(element => {
-      //   if (element.name == "Busy") {
-      //     this.colorVal = "#ffff00";
-      //   }
-      //   else if (element.name == "Idle") {
-      //     this.colorVal = "#008000";
-      //   }
-      //   else if (element.name == "Overload") {
-      //     this.colorVal = "#ff0000";
-      //   }
-      // });
+      
+      op.forEach(element => {
+        if (element.name == 'Busy') {
+          element.color = '#ffff00';
+        }
+        if (element.name == 'Idle') {
+          element.color = '#008000';
+        }
+        if (element.name == 'Overload') {
+          element.color = '#ff0000';
+        }
+      });
       // this.Highcharts.setOptions({
       //   colors: this.colorVal
       // })
-      // this.Highcharts.setOptions({
-      //   chart: {
-      //     backgroundColor: "transparent"
-      //   }
-      // })
+      this.Highcharts.setOptions({
+        chart: {
+          backgroundColor: "transparent"
+        }
+      })
       setTimeout( ()=>{
         this.Highcharts.chart({
           chart: {
