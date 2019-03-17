@@ -12,3 +12,58 @@
 .container {
 	@import "~@eds/vanilla/variables/container";
 }
+
+/////////////////////////////////////
+// Loading (Dial)
+/////////////////////////////////////
+
+.loading {
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  position: relative;
+
+  &::after {
+    content: "\e930";
+    font-family: "Ericsson Icons" !important;
+    animation: rotateAnimation 2s infinite ease-in-out;
+    position: absolute;
+  }
+
+  &.small {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+  }
+
+  &.large {
+    font-size: 64px;
+    height: 66px;
+    width: 64px;
+  }
+
+  &.btn {
+    font-size: 16px;
+    height: 30px;
+    width: 100px;
+
+    &::after {
+      left: calc(~"50%" - 8px);
+      top: calc(~"50%" - 8px);
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(300deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}

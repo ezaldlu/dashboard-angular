@@ -1,5 +1,5 @@
 <!-- <meta http-equiv="refresh" content="70; URL=https://dashboard.eid-tools.com/queue-dashboard"> -->
-  <div class="row" >
+<div class="row" >
     <div eds-tile class="xl-12" style="width: 700px">
         <eds-tile-title>User on Shift</eds-tile-title>
         <eds-tile-actions>
@@ -11,7 +11,6 @@
           </eds-dropdown>
         </div>
     </eds-tile-actions>
-        <!-- <eds-table id="table_scroll" [columns]="tablePresetColumns" [data]="tablePresetData" [modes]="['compact', 'dashed']"></eds-table> -->
         <table class="table">
           <thead>
            <tr>
@@ -23,16 +22,14 @@
            </tr>
           </thead>
           <tbody>
+            <div *ngIf='!tablePresetData' class="loading large"></div>
            <tr *ngFor="let row of tablePresetData | paginate: { itemsPerPage: 11, currentPage: p }; ">
             <td *ngFor="let cell of row"> {{cell.content}}</td>
            </tr>
           </tbody>
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>  
       </table>
-
     </div>
   </div>
-  
-  
   <script data-cfasync="false" src="./src/assets/jquery.js"></script>
   <script data-cfasync="false" src="./src/assets/app.js"></script>

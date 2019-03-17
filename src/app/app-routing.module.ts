@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     }
   },
   {
-    path: 'example-dashboard',
+    path: 'login',
     component: ExamplePageComponent,
     data: {
       title: 'Login',

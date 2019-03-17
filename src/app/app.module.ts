@@ -20,6 +20,8 @@ import { UpperqueueService } from './upperqueue.service';
 import {NgxAutoScrollModule} from "ngx-auto-scroll";
 import { NgxPaginationModule } from "ngx-pagination";
 import { RouterModule, Routes } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 import {
@@ -74,7 +76,7 @@ import { ActivityService } from './activity.service';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [ThemeService,TicketService,ScheduleService,CountryunitService,CustomerService,CategoryService, CategoryincService, CategorynewService, ProjectService, UnshiftService, IndicatorService, NgxAutoScrollModule, CategoryqueueService, UpperqueueService],
+  providers: [NgbModule,NgbCarouselConfig,ThemeService,TicketService,ScheduleService,CountryunitService,CustomerService,CategoryService, CategoryincService, CategorynewService, ProjectService, UnshiftService, IndicatorService, NgxAutoScrollModule, CategoryqueueService, UpperqueueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

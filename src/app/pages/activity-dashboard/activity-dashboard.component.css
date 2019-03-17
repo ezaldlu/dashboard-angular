@@ -739,3 +739,82 @@
   .dot-yellow {
     background-color: #ffff00;
   }
+
+  /* 
+  *
+  Slick Carousel
+  *
+  */
+
+  .slider {
+    width: auto;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 30px 0 50px;
+  }
+  .slick-slide {
+    background: #3a8999;
+    color: white;
+    padding: 40px 0;
+    font-size: 30px;
+    font-family: "Arial", "Helvetica";
+    text-align: center;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: black;
+  }
+  .slick-dots {
+    bottom: -30px;
+  }
+  .slick-slide:nth-child(odd) {
+    background: #e84a69;
+  }
+  
+  /*
+   * CSS Loading  
+   */
+
+   .loading {
+    height: 32px;
+    width: 32px;
+    font-size: 32px;
+    position: relative;
+  }
+  .loading::after {
+    content: "\e930";
+    font-family: "Ericsson Icons" !important;
+    animation: rotateAnimation 2s infinite ease-in-out;
+    position: absolute;
+  }
+  .loading.small {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+  }
+  .loading.large {
+    font-size: 64px;
+    height: 66px;
+    width: 64px;
+  }
+  .loading.btn {
+    font-size: 16px;
+    height: 30px;
+    width: 100px;
+  }
+  .loading.btn::after {
+    left: calc(50% - 8px);
+    top: calc(50% - 8px);
+  }
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(300deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  

@@ -11,7 +11,7 @@
   </div>
 
   <div class="error hidden">Invalid username and/or password.</div>
-  <form action="/templates/signin" method="get" class="">
+  <form (submit)="loginUser($event)">
 
     <div class="field validate">
       <input type="email" name="username" id="username" placeholder="Email" tabindex="0" autofocus required>
@@ -31,7 +31,7 @@
     <input type="checkbox" name="remember" id="remember" tabindex="0">
     <label for="remember">Remember me</label>
 
-    <button class="btn big primary">Sign in</button>
+    <button class="btn big primary" type="submit" value="Submit">Sign in</button>
 
     <div class="help">
       <a href="#" class="subtle-link">Having trouble signing in?</a>

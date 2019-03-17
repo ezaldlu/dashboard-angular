@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectService {
 
-  baseUrl:string = "https://ixt.eid-tools.com/rest/getTotalActivity";
+  baseUrl:string = "https://ixt.eid-tools.com/rest/getTotalNetworkIntegration";
   constructor(private httpClient : HttpClient) { }
 
   getEventActivity(){

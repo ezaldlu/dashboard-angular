@@ -133,7 +133,7 @@ export class QueueComponent implements OnInit {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    format: '<b>{point.name}</b>: {point.y:.1f} Tickets',
                     style: {
                         color: 'white',
                         font: '20px'
@@ -229,8 +229,10 @@ export class QueueComponent implements OnInit {
                             
     this.projectservice.getEventActivity().subscribe((res)=>{
         this.event = res;
-        let op = this.event.map(({Activity,Total})=> [Activity,parseInt(Total)])
-
+        let ip = this.event.map(e=>{
+            let k = Object.keys(e)[0]
+            return { name: k, y: +e[k] }
+        })
         setTimeout( ()=>{
             this.Highcharts.chart({
               chart: {
@@ -265,7 +267,7 @@ export class QueueComponent implements OnInit {
               },
               series: [{
                 name: 'Population',
-                data: op,
+                data: ip,
                 style: {
                     fontSize: '13px',
                     fontFamily: 'Ericsson Hilda, Helvetica, sans-serif'

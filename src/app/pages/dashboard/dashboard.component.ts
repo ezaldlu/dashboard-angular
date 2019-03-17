@@ -66,6 +66,7 @@ export class DashboardComponent implements OnInit {
       var ids = [['customer', 1], ['in_queue', 2], ['on_going', 3]],
       temp_queue = Object.keys(res).map(o => ids.map(([key, id]) => ({ id, content: res[o][key] })));
       this.tablePresetQueueData = temp_queue;
+      
 
       this.tablePresetQueueColumns = [
         {
@@ -155,10 +156,11 @@ export class DashboardComponent implements OnInit {
     
     this.scheduleService.getShiftSchedule().subscribe((temp)=>{
       this.api = temp;
+
       var ids = [['Name', 1], ['test', 2]],
       result = Object.keys(temp).map(o => ids.map(([key, id]) => ({ id, content: temp[o][key] })));
       this.tablePresetData = result;
-      console.log(result);
+      // console.log(result);
       
     })
 
